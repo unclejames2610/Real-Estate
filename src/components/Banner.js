@@ -2,7 +2,7 @@ import React from "react";
 
 import Image from "../assets/img/house-banner.png";
 
-import Search from "../components/Search";
+import Search from "./Search";
 
 const Banner = () => {
   return (
