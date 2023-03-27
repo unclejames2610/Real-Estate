@@ -25,6 +25,18 @@ const HouseContextProvider = ({ children }) => {
     setCountries(uniqueCountries);
   }, []);
 
+  // return all properties
+  useEffect(() => {
+    const allProperties = houses.map((house) => {
+      return house.type;
+    });
+
+    // remove duplicates
+    const uniqueProperties = ["Property type (any)", ...new Set(allProperties)];
+
+    setProperties(uniqueProperties);
+  }, []);
+
   return (
     <HouseContext.Provider
       value={{
