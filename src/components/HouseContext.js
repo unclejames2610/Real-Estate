@@ -37,6 +37,8 @@ const HouseContextProvider = ({ children }) => {
     setProperties(uniqueProperties);
   }, []);
 
+  const handleClick = () => {};
+
   return (
     <HouseContext.Provider
       value={{
@@ -51,6 +53,7 @@ const HouseContextProvider = ({ children }) => {
         setPrice,
         houses,
         loading,
+        handleClick,
       }}
     >
       {children}
