@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // import data
 import { housesData } from "../data";
@@ -7,6 +7,7 @@ import { housesData } from "../data";
 import { useParams, Link } from "react-router-dom";
 
 import { BiBed, BiBath, BiArea } from "react-icons/bi";
+import { HouseContext } from "../components/HouseContext";
 
 const PropertyDetails = () => {
   // get the house id
@@ -15,6 +16,8 @@ const PropertyDetails = () => {
   const house = housesData.find((house) => {
     return house.id === parseInt(id);
   });
+
+  const { isDarkMode } = useContext(HouseContext);
   return (
     <section>
       <div className="container mx-auto min-h-[800px] mb-14">
@@ -56,7 +59,11 @@ const PropertyDetails = () => {
             </div>
             <div>{house.description}</div>
           </div>
-          <div className="flex-1 bg-white w-full mb-8 border border-gray-300 rounded-lg px-6 py-8">
+          <div
+            className={`${
+              isDarkMode ? "bg-slate-800" : "bg-white"
+            } flex-1 w-full mb-8 border border-gray-300 rounded-lg px-6 py-8`}
+          >
             <div className="flex items-center gap-x-4 mb-8">
               <div className="w-20 h-20 p-1 border border-gray-300 rounded-full">
                 <img src={house.agent.image} alt=" " />

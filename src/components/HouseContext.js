@@ -12,6 +12,20 @@ const HouseContextProvider = ({ children }) => {
   const [properties, setProperties] = useState([]);
   const [price, setPrice] = useState("Price range (any)");
   const [loading, setLoading] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // for dark mode
+  useEffect(() => {
+    const isDark = localStorage.getItem("dark") === "true";
+    setIsDarkMode(isDark);
+  }, []);
+
+  // toggle theme function
+  const toggleTheme = () => {
+    const newIsDarkMode = !isDarkMode;
+    setIsDarkMode(newIsDarkMode);
+    localStorage.setItem("dark", newIsDarkMode);
+  };
 
   // return all countries
   useEffect(() => {
@@ -130,6 +144,8 @@ const HouseContextProvider = ({ children }) => {
         houses,
         loading,
         handleClick,
+        isDarkMode,
+        toggleTheme,
       }}
     >
       {children}

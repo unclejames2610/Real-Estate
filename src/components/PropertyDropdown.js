@@ -7,11 +7,17 @@ import { Menu } from "@headlessui/react";
 import { HouseContext } from "./HouseContext";
 
 const PropertyDropdown = () => {
-  const { property, setProperty, properties } = useContext(HouseContext);
+  const { property, setProperty, properties, isDarkMode } =
+    useContext(HouseContext);
 
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <Menu as="div" className="dropdown relative">
+    <Menu
+      as="div"
+      className={`${
+        isDarkMode ? "bg-slate-800" : "bg-white"
+      } dropdown relative`}
+    >
       <Menu.Button
         onClick={() => setIsOpen(!isOpen)}
         className="dropdown-btn w-full text-left"
@@ -30,7 +36,9 @@ const PropertyDropdown = () => {
         )}
       </Menu.Button>
 
-      <Menu.Items className="dropdown-menu">
+      <Menu.Items
+        className={`${isDarkMode ? "bg-slate-800" : "bg-white"} dropdown-menu`}
+      >
         {properties.map((property, index) => {
           return (
             <Menu.Item
