@@ -79,9 +79,9 @@ const HouseContextProvider = ({ children }) => {
       }
 
       //if all values are default
-      if (isDefault(country) && isDefault(property) && isDefault(price)) {
-        return house;
-      }
+      // if (isDefault(country) && isDefault(property) && isDefault(price)) {
+      //   return house;
+      // }
 
       // if country is not default
       if (!isDefault(country) && isDefault(property) && isDefault(price)) {
@@ -118,6 +118,8 @@ const HouseContextProvider = ({ children }) => {
           return house.type === property;
         }
       }
+      //if all values are default
+      return house;
     });
 
     // console.log(newHouses);
