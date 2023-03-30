@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div
       className={`max-w-[1440px] mx-auto ${
-        isDarkMode ? "bg-slate-800 text-white" : "bg-white"
+        isDarkMode ? "bg-slate-800 text-white dark" : "bg-white"
       }`}
     >
       <Header />

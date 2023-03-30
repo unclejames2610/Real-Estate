@@ -6,6 +6,10 @@
   body {
     @apply font-primary bg-gray-200;
   }
+
+  body.dark {
+    @apply bg-slate-900;
+  }
   .dropdown {
     @apply w-full lg:max-w-[296px] cursor-pointer;
   }

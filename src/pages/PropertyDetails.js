@@ -78,22 +78,30 @@ const PropertyDetails = () => {
             {/* form */}
             <form className="flex flex-col gap-y-4">
               <input
-                className="border border-gray-300 focus:border-violet-700 outline-none rounded w-full px-14 h-14 text-sm"
+                className={`${
+                  isDarkMode ? "bg-slate-800" : "bg-white"
+                } border border-gray-300 focus:border-violet-700 outline-none rounded w-full px-14 h-14 text-sm`}
                 type="text"
                 placeholder="Name*"
               />
               <input
-                className="border border-gray-300 focus:border-violet-700 outline-none rounded w-full px-14 h-14 text-sm"
+                className={`${
+                  isDarkMode ? "bg-slate-800" : "bg-white"
+                } border border-gray-300 focus:border-violet-700 outline-none rounded w-full px-14 h-14 text-sm`}
                 type="text"
                 placeholder="Email*"
               />
               <input
-                className="border border-gray-300 focus:border-violet-700 outline-none rounded w-full px-14 h-14 text-sm"
+                className={`${
+                  isDarkMode ? "bg-slate-800" : "bg-white"
+                } border border-gray-300 focus:border-violet-700 outline-none rounded w-full px-14 h-14 text-sm`}
                 type="text"
                 placeholder="Phone*"
               />
               <textarea
-                className="border border-gray-300 focus:border-violet-700 outline-none resize-none rounded w-full p-4 h-36 text-sm text-gray-400"
+                className={`${
+                  isDarkMode ? "bg-slate-800" : "bg-white"
+                } border border-gray-300 focus:border-violet-700 outline-none resize-none rounded w-full p-4 h-36 text-sm text-gray-400`}
                 placeholder="Message*"
                 defaultValue="Hello, I am interested in [Modern apartment]"
               ></textarea>
